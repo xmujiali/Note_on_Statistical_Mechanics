@@ -13,11 +13,11 @@
           \begin{itemize}
               \item 无相互作用的单原子气体$(q=q_t)$
                     \begin{equation*}
-                        q=q_t \implies Q \implies 
-                            \begin{cases}
-                                A \implies p \implies PV=nRT \\
-                                U \implies C_v = \frac{3}{2}Nk
-                            \end{cases}
+                        q=q_t \implies Q \implies
+                        \begin{cases}
+                            A \implies p \implies PV=nRT \\
+                            U \implies C_v = \frac{3}{2}Nk
+                        \end{cases}
                     \end{equation*}
               \item 同上，经典处理：Gibbs佯谬；“状态”的意义
               \item 经典的振子$(q=q_v)$：能均分定理及其推论，局限性
@@ -33,15 +33,15 @@
 
 
 \begin{postulate}
-对孤立系统，每一可能的状态都具有相同的概率。即
-\begin{equation}
-    \mathbb{P}(j) = \left\{
+    对孤立系统，每一可能的状态都具有相同的概率。即
+    \begin{equation}
+        \mathbb{P}(j) = \left\{
         \begin{aligned}
-            1/\Omega &, \text{ if } E_j = E \\
-            0 &, \text{ if } E_j \neq E
+            1/\Omega & , \text{ if } E_j = E    \\
+            0        & , \text{ if } E_j \neq E
         \end{aligned}
-    \right.
-\end{equation}
+        \right.
+    \end{equation}
 \end{postulate}
 
 \begin{rek}
@@ -49,9 +49,58 @@
 \end{rek}
 
 \begin{rek}
-    在大数极限下，我们只能观察到最可几的态。
+    一个孤立系统的全部微观状态，可以对应于不同的宏观态。然而，在大数极限下，我们只能观察到最可几的宏观态，其余宏观态根本无法观察到。谁见过10000个硬币抛掷的结果全部为正呢？
 \end{rek}
 
-\begin{equation}
-    S = k \ln \Omega
-\end{equation}
+\begin{defn}
+    统计熵$S$，定义为：
+    \begin{equation}
+        S := k \ln \Omega
+    \end{equation}
+\end{defn}
+\begin{rek}
+    我们定义的$S$随$\Omega$单调增加，故两者可以一一对应，最可几的$\Omega$等价于最大的$S$。比例系数$k$的选择是为了方便起见，稍后我们将看到这样定义的统计熵和热力学熵是一致的。
+\end{rek}
+
+\chapter{孤立系平衡的条件；热力学四定律的导出}
+\section{热平衡的条件}
+将一个系统用\emph{固定的、导热的、不可透过粒子}的壁分为两部分。则
+\begin{align*}
+    E_1 + E_2 & = E_0 \\
+    V_1 + V_2 & = E_0 \\
+    N_1 + N_2 & = E_0
+\end{align*}
+
+\begin{align*}
+    \Omega_1 & = \Omega_1(E_1, V_1, N_1) = \Omega_1(E_1) \\
+    \Omega_2 & = \Omega_2(E_2, V_2, N_2) = \Omega_2(E_2) \text{, where } E_2 = E_0 - E_1 \\
+    \Omega   & = \Omega_1(E_1)\Omega_2(E_2) \\
+    \frac{\partial \Omega}{\partial E_1} 
+    & = \frac{\partial \Omega_1}{\partial E_1} \Omega_2 
+    + \Omega_1 \frac{\partial \Omega_2}{\partial E_2} \frac{\mathrm{d} E_2}{\mathrm{d} E_1} \\
+    & = \frac{\partial \Omega_1}{\partial E_1} \Omega_2 - \Omega_1 \frac{\partial \Omega_2}{\partial E_2}
+\end{align*}
+两边同时除以$\Omega = \Omega_1 \Omega_2$，再利用$\frac{1}{y}\frac{\partial y}{\partial x} = \frac{\partial \ln y}{\partial x}$，得到：
+\begin{equation*}
+    \frac{\partial S}{\partial E_1} = \frac{\partial S_1}{\partial E_1} - \frac{\partial S_2}{\partial E_2}
+\end{equation*}
+由于$S$不减，$\mathrm{d}E_1 > 0 \iff \frac{\partial S_1}{\partial E_1} - \frac{\partial S_2}{\partial E_2} > 0 \iff \frac{\partial S_1}{\partial E_1} > \frac{\partial S_2}{\partial E_2}$，反之亦然。可见，热量从$\frac{\partial S}{\partial E}$较低处流向$\frac{\partial S}{\partial E}$较高处，$\frac{\partial S}{\partial E}$与温度究竟时何关系呢？
+\begin{defn}
+    $\frac{1}{T} := \left(\frac{\partial S}{\partial E}\right)_{N,V}$
+\end{defn}
+根据上面的讨论，热平衡的条件是$T_1 = T_2$。
+
+回忆热力学中，$\mathrm{d}E = T\mathrm{d}S - p\mathrm{d}V + \mu \mathrm{d}N$，即
+\begin{equation*}
+    \mathrm{d}S = \frac{1}{T} \mathrm{d}E + \frac{p}{T}\mathrm{d}V - \frac{\mu}{T}\mathrm{d}N
+\end{equation*}
+在我们所考虑的情形下，体积和粒子数都不会变化，后两项不存在。对比发现，我们定义的$T$与热力学温度是一致的。
+
+
+\section{压力平衡的条件}
+将一个系统用\emph{可动的、导热的、不可透过粒子}的壁分为两部分。
+
+
+\section{相/化学平衡的条件}
+将一个系统用\emph{固定的、导热的、可透过粒子}的壁分为两部分。
+
