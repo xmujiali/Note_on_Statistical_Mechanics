@@ -1,0 +1,42 @@
+%# -*- coding: utf-8-unix -*-
+\documentclass{ctexrep}[12pt,a4paper,openany]
+
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+
+
+
+% 中文定理环境
+\newtheorem{thm}{定理}[chapter]
+\newtheorem{hypo}[thm]{公设}
+\newtheorem{lemma}[thm]{引理}
+\newtheorem{prop}[thm]{命题}
+\newtheorem{cor}[thm]{推论}
+\newtheorem{defn}[thm]{定义}
+\newtheorem{ex}[thm]{例}
+\newtheorem{rek}[thm]{注}
+\newenvironment{sol}{\begin{proof}[\bf 解]}{\end{proof}}
+\renewcommand{\proofname}{\bf 证明:}
+
+
+\begin{document}
+
+\title{\Huge A short Introdution to\\ Statistical Mechanics}
+\author{Dr. Jia Li\\xmujiali@163.com}
+\date{\today}
+\maketitle
+\tableofcontents
+
+
+% 正文内容
+\include{chapters/1}
+\include{chapters/2}
+\include{chapters/3}
+\include{chapters/4}
+\include{chapters/5}
+
+\end{document}
