@@ -4,13 +4,26 @@
 
 安排如下：
 \begin{itemize}
-    \item 
-    \item 2
-    \item 3
-    \item 4
-    \item 5
-    \item 6
-    \item 
+    \item Statistical Mechanics 的基本假设；孤立系的平衡条件；热力学四定律的导出
+    \item 正则系综；正则配分函数；配分函数的分解
+          \begin{equation*}
+              Q \implies q^N \text{ or } \frac{q^N}{N!} \implies q = q_t q_n q_e q_v q_r
+          \end{equation*}
+    \item 例子
+          \begin{itemize}
+              \item 无相互作用的单原子气体$(q=q_t)$
+                    \begin{equation*}
+                        q=q_t \implies Q \implies 
+                            \begin{cases}
+                                A \implies p \implies PV=nRT \\
+                                U \implies C_v = \frac{3}{2}Nk
+                            \end{cases}
+                    \end{equation*}
+              \item 同上，经典处理：Gibbs佯谬；“状态”的意义
+              \item 经典的振子$(q=q_v)$：能均分定理及其推论，局限性
+              \item Maxwell 速度分布律的导出
+          \end{itemize}
+    \item 量子化学计算求气相反应的热力学数据，例如
 \end{itemize}
 
 
@@ -19,7 +32,7 @@
 统计力学假设很少，而且相当简单。统计力学假设：
 
 
-\begin{hypo}
+\begin{postulate}
 对孤立系统，每一可能的状态都具有相同的概率。即
 \begin{equation}
     \mathbb{P}(j) = \left\{
@@ -29,7 +42,7 @@
         \end{aligned}
     \right.
 \end{equation}
-\end{hypo}
+\end{postulate}
 
 \begin{rek}
     该假设中隐含了“各态历经”的假设。
